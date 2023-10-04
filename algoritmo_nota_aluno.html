@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Média aritmética de três notas de um aluno</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <script>
+ 
+function algoritmo()
+{
+    let media, nota_1, nota_2, nota_3;
+    nota_1 = parseFloat (document.forma1.nota_1.value);
+    nota_2 = parseFloat (document.forma1.nota_2.value);
+    nota_3 = parseFloat (document.forma1.nota_3.value);
+    media=(nota_1+nota_2+nota_3)/3;
+    if(media>=7)
+        alert('Aprovado');
+    if(media<3)
+        alert('Reprovado');
+    if(media>=3&&media<7)
+        alert('Prova final');
+    document.forma1.media.value = media;
+}
+ 
+        </script>
+    </head>
+    <body>
+        <form name="forma1">
+            <table style="text-align: left; margin-left: auto; margin-right: auto;">
+                <tbody>
+                    <tr>
+                        <td>
+                            <label for="nota_1">Digite o valor do nota 1:</label>
+                        </td>
+                        <td>
+                            <input name="nota_1" required="required" step="0.000001" type="number" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="nota_2">Digite o valor do nota 2:</label>
+                        </td>
+                        <td>
+                            <input name="nota_2" required="required" step="0.000001" type="number" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="nota_3">Digite o valor do nota 3:</label>
+                        </td>
+                        <td>
+                            <input name="nota_3" required="required" step="0.000001" type="number" />
+                        </td>
+                    </tr>
+                    <tr text-align="center">
+                        <td colspan="2" rowspan="1">
+                            <input value="Processo" type="button" onclick="algoritmo();" />
+                            <input type="reset" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="media">O valor do media:</label>
+                        </td>
+                        <td>
+                            <input name="media" step="0.000001" type="number" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </body>
+</html>
