@@ -10,24 +10,30 @@
 // exibir a média e exibir a situação do aluno: aprovado,
 // em exame ou reprovado.
 
-console.log("Início do programa");
+function mediaAluno() {
 
-// declaração de variáveis
+    console.log("Início do programa");
 
-let nota1, nota2, nota3;
+   
 
 
-// cálculo da média
+    // cálculo da média
 
-nota1 = parseFloat (prompt("Digita a primeira nota do aluno:"));
-nota2 = parseFloat (prompt("Digita a segunda nota do aluno:"));
-nota3 = parseFloat (prompt("Digita a terceira nota do aluno:"));
+    nota1 = parseFloat(document.getElementById('nota1').value);
+    nota2 = parseFloat (document.getElementById('nota2').value);
+    nota3 = parseFloat (document.getElementById('nota3').value);
 
-const media = parseFloat(nota1+nota2+nota3) / 3;
-const media_p = media.toFixed(2)
+    const media = (parseFloat(nota1+nota2+nota3) / 3).toFixed(2);
+    document.getElementById('resultado').innerHTML = 'A média do aluno  é: ' + media + '<br>';
 
-if (media <= 5)
-    
-    alert("Reprovado com média: " + media_p);
-else
-    alert("Aprovado com média: " + media_p);
+    if (media >= 7) {
+        document.getElementById('resultado').innerHTML += 'Situação: APROVADO';
+    }
+
+    if (media < 7 && media <=5) {
+        document.getElementById('resultado').innerHTML += 'Situação: EXAME';
+    } else {
+        document.getElementById('resultado').innerHTML += 'Situação: REPROVADO';
+    }
+
+}    
