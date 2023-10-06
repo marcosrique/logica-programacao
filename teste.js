@@ -1,4 +1,8 @@
 
+valor = parseFloat(document.getElementById('valor').value);
+
+
+
 //Transformar números em número por extenso (moeda também) 
 
 function Extenso(vlr){
